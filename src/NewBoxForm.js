@@ -17,6 +17,7 @@ class NewBoxForm extends React.Component {
         });
     }
     handleSubmit(evt) {
+        evt.preventDefault();
         console.log('Submitted!');
     }
     render() {
