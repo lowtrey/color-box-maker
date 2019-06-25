@@ -10,7 +10,7 @@ class Box extends React.Component {
                     height: Number(this.props.height)
                     }}>
                 </div>
-                <button>X</button>
+                <button onClick={this.props.removeBox}>Remove</button>
             </div>
         )
     }
