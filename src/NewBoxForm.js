@@ -19,6 +19,7 @@ class NewBoxForm extends React.Component {
     handleSubmit(evt) {
         evt.preventDefault();
         this.props.addBox(this.state);
+        this.setState({width: '', height: '', color: ''});
     }
     render() {
         return(
