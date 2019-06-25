@@ -3,6 +3,12 @@ import NewBoxForm from './NewBoxForm';
 import Box from './Box';
 
 class BoxList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        }
+    }
     render() {
         return(
             <div>
