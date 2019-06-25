@@ -18,7 +18,7 @@ class NewBoxForm extends React.Component {
     }
     handleSubmit(evt) {
         evt.preventDefault();
-        console.log('Submitted!');
+        this.props.addBox(this.state);
     }
     render() {
         return(
@@ -28,7 +28,7 @@ class NewBoxForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="width">Width: </label>
                     <input
-                        type='text'
+                        type='number'
                         id='width'
                         name='width'
                         placeholder='Width'
@@ -38,7 +38,7 @@ class NewBoxForm extends React.Component {
                     </input><br />
                     <label htmlFor="height">Height: </label>
                     <input
-                        type='text'
+                        type='number'
                         id='height'
                         name='height'
                         placeholder='Height'

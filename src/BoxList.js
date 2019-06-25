@@ -7,20 +7,21 @@ class BoxList extends React.Component {
         super(props);
         this.state = {
             boxes: [
-                {width: '100px', height: '100px', color: 'blue'},
-                {width: '100px', height: '100px', color: 'blue'}
+                {width: 100, height: 100, color: 'blue'},
+                {width: 100, height: 100, color: 'blue'}
             ]
         };
-        this.renderBoxes = this.renderBoxes.bind(this);
+        this.addBox = this.addBox.bind(this);
     }
-    renderBoxes() {
-        return this.state.boxes.map((box) => <Box width={box.width} height={box.height} color={box.color} />);
+    addBox(box) {
+        this.setState((prevState) => ({boxes: [...prevState.boxes, box]}));
     }
     render() {
+        let boxRender = this.state.boxes.map((box) => <Box width={box.width} height={box.height} color={box.color} />);
         return(
             <div>
-                <NewBoxForm />
-                {this.renderBoxes()}
+                <NewBoxForm addBox={this.addBox} />
+                {boxRender}
             </div>
         )
     }
